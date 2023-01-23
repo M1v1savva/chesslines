@@ -1,0 +1,47 @@
+.comment-panel {
+  display:flex;
+  flex-direction: column;
+  margin-left: 50px;
+  height: 233px;
+  width: 600px;
+  background-color: #233240;
+  overflow-y: scroll
+}
+
+.edit-button {
+  margin-left: 50px;  
+  margin-top: 10px;
+}
+
+.save-comment-button {
+  margin-left: 50px;  
+  margin-top: 5px;
+}
+
+.cancel-comment-button {
+  margin-left: 10px;  
+  margin-top: 5px;
+}
+
+.comment-title {
+  margin-top: 30px;
+  margin-left: 50px;
+}
+
+.comment-body {
+  margin-left: 10px;
+  margin-top: 5px;
+  margin-right: 10px;
+  margin-bottom: 10px;
+}
+
+.form-body {
+  margin-left: 50px;
+  padding-left: 10px;
+  padding-top: 5px;
+  height: 233px;
+  background-color: #233240;
+  border: none;
+  width: 600px;
+  color: white;
+}

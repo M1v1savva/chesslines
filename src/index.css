@@ -1,0 +1,32 @@
+.main-body {
+  background-color: #1B2631;
+  max-height: 100% !important;
+  height: 100% !important;
+  max-width: 100% !important;
+  width: 100% !important;
+  position: fixed;
+}
+
+.about-text {
+  color: white;
+  padding: 3% 3%;
+}
+
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: #233240;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #2F465E;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #2A3E52;
+}

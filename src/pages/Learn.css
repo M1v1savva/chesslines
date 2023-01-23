@@ -1,0 +1,14 @@
+.split-board {
+  display:flex;
+  flex-direction: row;
+}
+
+.chess-container {
+  max-width: 100% !important;
+  width: 100% !important;
+}
+
+.save-button {
+  margin-left: 140px;
+  margin-top: 10px;
+}
