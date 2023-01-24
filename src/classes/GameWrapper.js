@@ -70,7 +70,7 @@ export class GameWrapper {
     jump_to_move(move_id) {
         while (this.activeMove < move_id) {
             this.activeMove += 1
-            this.make_move(this.moveParam[this.activeMove])
+            this.game.move(this.moveParam[this.activeMove])
         }
 
         while (this.activeMove > move_id) {
@@ -97,7 +97,7 @@ export class GameWrapper {
         var last = this.moveParam.length - 1
         if (this.activeMove != last) {
             this.activeMove += 1
-            this.make_move(this.moveParam[this.activeMove])
+            this.game.move(this.moveParam[this.activeMove])
         }
     }
 
@@ -105,7 +105,7 @@ export class GameWrapper {
         var last = this.moveParam.length - 1
         while (this.activeMove != last) {
             this.activeMove += 1
-            this.make_move(this.moveParam[this.activeMove])
+            this.game.move(this.moveParam[this.activeMove])
         }
     }
 
