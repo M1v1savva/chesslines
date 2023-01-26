@@ -1,10 +1,11 @@
-import { sendCommentRequest, sendMovesRequest } from './ServerRequests.js'
+import { sendCommentRequest, sendMovesRequest,
+         getCommentRequest, getMovesRequest } from './ServerRequests.js'
 
 export class MovesDatabase {
 
     constructor(
-        moveseq_to_moves = {'': ['e4', 'd4']},
-        moveseq_to_comment = {'': 'funny position'},
+        moveseq_to_moves = {},
+        moveseq_to_comment = {},
         current_moveseq = '',
         can_save = false,
         edit_on = false
@@ -74,7 +75,7 @@ export class MovesDatabase {
     save_moves() {
         this.update_moves()
         this.can_save = false
-        // sendMovesRequest(this.current_moveseq)
+        sendMovesRequest(this.current_moveseq)
     }
 
     update_moves() {
@@ -113,6 +114,6 @@ export class MovesDatabase {
 
     set_comment(new_comment) {
         this.moveseq_to_comment[this.current_moveseq] = new_comment               
-        // sendCommentRequest(this.current_moveseq, new_comment)
+        sendCommentRequest(this.current_moveseq, new_comment)
     }
 }

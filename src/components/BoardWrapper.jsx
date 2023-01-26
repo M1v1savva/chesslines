@@ -1,5 +1,7 @@
 import { useRef, useState } from 'react'
+import { Button } from 'react-bootstrap'
 import { Chessboard } from 'react-chessboard'
+import './BoardWrapper.css'
 
 export default function BoardWrapper({ boardWidth, game, setGame, movesDatabase, setMovesDatabase}) {
   const chessboardRef = useRef()
@@ -97,8 +99,9 @@ export default function BoardWrapper({ boardWidth, game, setGame, movesDatabase,
         }}
         ref={chessboardRef}
       />
-      <button
-        className="rc-button"
+      <Button
+        className="board-button"
+        variant='success'
         onClick={() => {
           const gameCopy = game.copy()
           gameCopy.hard_left()
@@ -110,9 +113,10 @@ export default function BoardWrapper({ boardWidth, game, setGame, movesDatabase,
         }}
       >
         hard-left
-      </button>
-      <button
-        className="rc-button"
+      </Button>
+      <Button
+        className="board-button"
+        variant='success'
         onClick={() => {
           const gameCopy = game.copy()
           gameCopy.left()
@@ -124,9 +128,10 @@ export default function BoardWrapper({ boardWidth, game, setGame, movesDatabase,
         }}
       >
         left
-      </button>
-      <button
-        className="rc-button"
+      </Button>
+      <Button
+        className="board-button"
+        variant='success'
         onClick={() => {
           const gameCopy = game.copy()
           gameCopy.right()
@@ -138,9 +143,10 @@ export default function BoardWrapper({ boardWidth, game, setGame, movesDatabase,
         }}
       >
         right
-      </button>
-      <button
-        className="rc-button"
+      </Button>
+      <Button
+        className="board-button"
+        variant='success'
         onClick={() => {
           const gameCopy = game.copy()
           gameCopy.hard_right()
@@ -152,16 +158,17 @@ export default function BoardWrapper({ boardWidth, game, setGame, movesDatabase,
         }}
       >
         hard-right
-      </button>
+      </Button>
 
-      <button
-        className="rc-button"
-        onClick={() => {
+      <Button
+        className="board-button"
+        variant='success'
+        onClick={() => {      
           setBoardOrientation((currentOrientation) => (currentOrientation === 'white' ? 'black' : 'white'))
         }}
       >
         flip board
-      </button>
+      </Button>
       {/* <button
         className="rc-button"
         onClick={() => {

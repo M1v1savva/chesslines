@@ -8,6 +8,7 @@ import Comment from './../components/Comment'
 import './../index.css'
 import './Learn.css'
 import { MovesDatabase } from '../classes/MovesDatabase';
+import { getCommentRequest, getMovesRequest } from '../classes/ServerRequests.js';
 
 function Learn() {
     const [chessboardSize, setChessboardSize] = useState(10)
@@ -25,6 +26,19 @@ function Learn() {
         return () => window.removeEventListener("resize", handleResize)
     }, [])
 
+    useEffect(() => {
+        const apiCall = async() => {
+            try {
+                const comment_data = await getCommentRequest()
+                const move_data = await getMovesRequest()
+                setMovesDatabase(new MovesDatabase(move_data, comment_data))
+            } catch(error) {
+                console.log(error)
+            }
+        }
+        apiCall()
+    }, [])
+    
     return (
         <div className='main-body'>
             <div className='about-text'>
