@@ -1,6 +1,6 @@
 import './Comment.css'
 import React, { useState } from "react"
-import Button from 'react-bootstrap/Button';
+import Button from 'react-bootstrap/Button'
 import Form from 'react-bootstrap/Form'
 
 export default function Comment({game, setGame, movesDatabase, setMovesDatabase}) {

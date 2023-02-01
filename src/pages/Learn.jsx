@@ -10,7 +10,7 @@ import './Learn.css'
 import { MovesDatabase } from '../classes/MovesDatabase';
 import { getCommentRequest, getMovesRequest } from '../classes/ServerRequests.js';
 
-function Learn() {
+function Learn({token}) {
     const [chessboardSize, setChessboardSize] = useState(10)
     const [gameWrapper, setGameWrapper] = useState(new GameWrapper())
     const [movesDatabase, setMovesDatabase] = useState(new MovesDatabase())
@@ -27,10 +27,16 @@ function Learn() {
     }, [])
 
     useEffect(() => {
+        const movesDatabaseCopy = movesDatabase.copy()
+        movesDatabase.setToken(token)
+        setMovesDatabase(movesDatabaseCopy)
+    }, [])
+
+    useEffect(() => {
         const apiCall = async() => {
             try {
-                const comment_data = await getCommentRequest()
-                const move_data = await getMovesRequest()
+                const comment_data = await getCommentRequest(token)
+                const move_data = await getMovesRequest(token)
                 setMovesDatabase(new MovesDatabase(move_data, comment_data))
             } catch(error) {
                 console.log(error)

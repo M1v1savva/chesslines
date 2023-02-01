@@ -2,10 +2,10 @@ import React from "react"
 import {Outlet} from "react-router-dom"
 import AppBar from "../components/AppBar"
 
-const Layout = () => {
+const Layout = ({token}) => {
   return (
     <>
-      <AppBar />
+      <AppBar token={token}/>
       <Outlet />
     </>
   )

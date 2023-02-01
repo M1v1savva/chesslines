@@ -1,5 +1,4 @@
-import { sendCommentRequest, sendMovesRequest,
-         getCommentRequest, getMovesRequest } from './ServerRequests.js'
+import { sendCommentRequest, sendMovesRequest } from './ServerRequests.js'
 
 export class MovesDatabase {
 
@@ -8,13 +7,15 @@ export class MovesDatabase {
         moveseq_to_comment = {},
         current_moveseq = '',
         can_save = false,
-        edit_on = false
+        edit_on = false,
+        token = null
     ) {
         this.moveseq_to_moves = moveseq_to_moves
         this.moveseq_to_comment = moveseq_to_comment
         this.current_moveseq = current_moveseq
         this.can_save = can_save
         this.edit_on = edit_on
+        this.token = token
     }
 
     copy() {
@@ -23,7 +24,8 @@ export class MovesDatabase {
             this.moveseq_to_comment,
             this.current_moveseq,
             this.can_save,
-            this.edit_on
+            this.edit_on,
+            this.token
         )
     }
 
@@ -75,7 +77,7 @@ export class MovesDatabase {
     save_moves() {
         this.update_moves()
         this.can_save = false
-        sendMovesRequest(this.current_moveseq)
+        sendMovesRequest(this.current_moveseq, this.token)
     }
 
     update_moves() {
@@ -114,6 +116,10 @@ export class MovesDatabase {
 
     set_comment(new_comment) {
         this.moveseq_to_comment[this.current_moveseq] = new_comment               
-        sendCommentRequest(this.current_moveseq, new_comment)
+        sendCommentRequest(this.current_moveseq, new_comment, this.token)
+    }
+
+    setToken(token) {
+        this.token = token
     }
 }

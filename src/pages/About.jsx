@@ -5,8 +5,8 @@ function About() {
     return (
         <div className='main-body'>
             <div className='about-text'>
-                <h1>Hi, Vanya here! </h1>
-                <h5>This page is About page of my website. Enjoy!</h5>
+                <h1>How to use this tool? </h1>
+                <p>Chesslines.com allows is the website</p>
             </div>
         </div>
     )
