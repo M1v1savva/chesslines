@@ -8,7 +8,7 @@ function AppBar({token}) {
   return (
     <Navbar collapseOnSelect expand="lg" bg="dark" variant="dark">
       <Container className='nav-container'>
-        <Navbar.Brand as={Link} to="/">React-Bootstrap</Navbar.Brand>
+        <Navbar.Brand as={Link} to="/">Chesslines</Navbar.Brand>
         <Navbar.Toggle aria-controls="responsive-navbar-nav" />
         <Navbar.Collapse id="responsive-navbar-nav">
           <Nav className="me-auto">
