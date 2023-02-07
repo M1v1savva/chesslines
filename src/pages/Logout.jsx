@@ -24,7 +24,7 @@ function Logout({removeToken}) {
         <div className='main-body'>
             <div className='about-text'>
             <div className='logout-form'>
-            <p>You are sure you want to log out?</p>
+            <p>Are you sure you want to log out?</p>
             <Button className='logout-button' variant="danger" type="submit" onClick={logoutPressed}>
                 Log out
             </Button>

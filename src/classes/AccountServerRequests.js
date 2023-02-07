@@ -3,6 +3,7 @@ import axios from "./../axios.js"
 const SIGN_IN_URL = process.env.REACT_APP_SIGN_IN_URL
 const SIGN_UP_URL = process.env.REACT_APP_SIGN_UP_URL
 const LOG_OUT_URL = process.env.REACT_APP_LOG_OUT_URL
+const CONFIRMATION_URL = process.env.REACT_APP_CONFIRMATION_URL
 
 const sendLoginRequest = async(loginForm) => {
     try {
@@ -57,4 +58,21 @@ const sendLogoutRequest = async() => {
     }
 }
 
-export { sendLoginRequest, sendSignupRequest, sendLogoutRequest }
+const requestConfirmation = async() => {
+    try {
+        const res = await axios.post(CONFIRMATION_URL, {
+
+        })
+        return {"status": 200}
+    } catch (error) {
+        if (error.response) {
+            console.log(error.response)
+            console.log(error.response.status)
+            console.log(error.response.headers)
+            return {"status": error.response.status}
+        }
+        return {"status": "unknown"}
+    }
+}
+
+export { sendLoginRequest, sendSignupRequest, sendLogoutRequest, requestConfirmation }
