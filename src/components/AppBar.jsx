@@ -14,16 +14,14 @@ function AppBar({token}) {
           <Nav className="me-auto">
             <Nav.Link as={Link} to='/'>Home</Nav.Link>
           
-            <Nav.Link as={Link} to={
-              !token && token!=="" && token !== undefined ? 'login' : 'learn'
-              }>Learn</Nav.Link>
+            <Nav.Link as={Link} to='learn'>Learn</Nav.Link>
             
             <Nav.Link as={Link} to="contact">Contact</Nav.Link>
           </Nav>
           <Nav>
             {!token && token!=="" && token !== undefined ?
             <>
-              <Nav.Link as={Link} to='login'>Log in</Nav.Link>
+              <Nav.Link as={Link} to='login'>Sign in</Nav.Link>
               <Nav.Link as={Link} to='signup'>Sign up</Nav.Link>
             </>
             :

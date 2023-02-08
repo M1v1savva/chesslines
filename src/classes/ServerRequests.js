@@ -36,7 +36,6 @@ const sendMovesRequest = async(move_sequence, token) => {
 
 const getCommentRequest = async(token) => {
     try {
-        console.log(token)
         const res = await axios.post(GET_COMMENT_URL, {
         }, {headers: {Authorization: `Bearer ${token}`}})
         const comment_data = res.data.comment_data
@@ -52,7 +51,6 @@ const getCommentRequest = async(token) => {
 
 const getMovesRequest = async(token) => {
     try {
-        console.log(token)
         const res = await axios.post(GET_MOVE_URL, {
         }, {headers: {Authorization: `Bearer ${token}`}})
         const move_data = res.data.move_data

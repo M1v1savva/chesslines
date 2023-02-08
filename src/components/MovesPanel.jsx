@@ -42,7 +42,7 @@ export default function MovesPanel({game, setGame, movesDatabase, setMovesDataba
       )
     } else {
       return (
-        <Button className='move-button' onClick={() => select_move(move_id)}> {move} </Button>
+        <Button className='move-button1' onClick={() => select_move(move_id)}> {move} </Button>
       )
     }
   }
@@ -73,20 +73,6 @@ export default function MovesPanel({game, setGame, movesDatabase, setMovesDataba
     )
   }
 
-  const handleSave = () => {
-      const movesDatabaseCopy = movesDatabase.copy()
-      movesDatabaseCopy.save_moves()
-      setMovesDatabase(movesDatabaseCopy)
-  }
-
-  const getSaveButton = () => {
-      const save_available = movesDatabase.is_save_available()
-      if (save_available === true) 
-          return <Button variant='success' className='save-button' onClick={handleSave}>Save</Button>
-      else
-          return <Button variant='success' className='save-button' disabled>Save</Button> 
-  }
-
   return (
     <div className='moves-panel'>
       <div className='moves-history'>
@@ -94,7 +80,6 @@ export default function MovesPanel({game, setGame, movesDatabase, setMovesDataba
           getElement(item))
         )}
       </div>
-      {getSaveButton()}
     </div>
   )
 }

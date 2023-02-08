@@ -3,11 +3,10 @@ import { Button } from 'react-bootstrap'
 import { Chessboard } from 'react-chessboard'
 import './BoardWrapper.css'
 
-export default function BoardWrapper({ boardWidth, game, setGame, movesDatabase, setMovesDatabase}) {
+export default function BoardWrapper({ boardOrientation, boardWidth, game, setGame, movesDatabase, setMovesDatabase}) {
   const chessboardRef = useRef()
 
   const [arrows, setArrows] = useState([]) // add class helper
-  const [boardOrientation, setBoardOrientation] = useState('white') // add class helper
   const [rightClickedSquares, setRightClickedSquares] = useState({}) // add class helper
   const [optionSquares, setOptionSquares] = useState({})
 
@@ -76,6 +75,20 @@ export default function BoardWrapper({ boardWidth, game, setGame, movesDatabase,
     })
   }
 
+  const handleSave = () => {
+      const movesDatabaseCopy = movesDatabase.copy()
+      movesDatabaseCopy.save_moves()
+      setMovesDatabase(movesDatabaseCopy)
+  }
+
+  const getSaveButton = () => {
+      const save_available = movesDatabase.is_save_available()
+      if (save_available === true) 
+          return <Button variant='info' className='save-button' onClick={handleSave}>Save</Button>
+      else
+          return <Button variant='info' className='save-button' disabled>Save</Button> 
+  }
+
   return (
     <div className='chess-cont'>
       <Chessboard
@@ -99,68 +112,7 @@ export default function BoardWrapper({ boardWidth, game, setGame, movesDatabase,
         }}
         ref={chessboardRef}
       />
-      <Button
-        className="board-button"
-        variant='success'
-        onClick={() => {
-          const gameCopy = game.copy()
-          gameCopy.hard_left()
-          setGame(gameCopy)
-    
-          const movesDatabaseCopy = movesDatabase.copy()
-          movesDatabaseCopy.update(gameCopy.get_history())
-          setMovesDatabase(movesDatabaseCopy)
-        }}
-      ><h2 className='button-text'>⇤</h2></Button>
-      <Button
-        className="board-button"
-        variant='success'
-        onClick={() => {
-          const gameCopy = game.copy()
-          gameCopy.left()
-          setGame(gameCopy)
-
-          const movesDatabaseCopy = movesDatabase.copy()
-          movesDatabaseCopy.update(gameCopy.get_history())
-          setMovesDatabase(movesDatabaseCopy)
-        }}
-      ><h2 className='button-text'>←</h2></Button>
-      <Button
-        className="board-button"
-        variant='success'
-        onClick={() => {
-          const gameCopy = game.copy()
-          gameCopy.right()
-          setGame(gameCopy)
-
-          const movesDatabaseCopy = movesDatabase.copy()
-          movesDatabaseCopy.update(gameCopy.get_history())
-          setMovesDatabase(movesDatabaseCopy)
-        }}
-      ><h2>→</h2></Button>
-      <Button
-        className="board-button"
-        variant='success'
-        onClick={() => {
-          const gameCopy = game.copy()
-          gameCopy.hard_right()
-          setGame(gameCopy)
-
-          const movesDatabaseCopy = movesDatabase.copy()
-          movesDatabaseCopy.update(gameCopy.get_history())
-          setMovesDatabase(movesDatabaseCopy)
-        }}
-      ><h2>⇥</h2></Button>
-
-      <Button
-        className="board-button"
-        variant='success'
-        onClick={() => {      
-          setBoardOrientation((currentOrientation) => (currentOrientation === 'white' ? 'black' : 'white'))
-        }}
-      >
-        flip board
-      </Button>
+      {getSaveButton()}
       {/* <button
         className="rc-button"
         onClick={() => {

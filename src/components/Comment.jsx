@@ -59,12 +59,12 @@ export default function Comment({game, setGame, movesDatabase, setMovesDatabase}
     if (formSwitch == true && movesDatabase.is_edit_on()) {
       return (
       <div>
-        <Button className='save-comment-button' variant='success' onClick={handleSave}>Save</Button> 
-        <Button className='cancel-comment-button' variant='success' onClick={handleCancel}>Cancel</Button> 
+        <Button className='save-comment-button' variant='info' onClick={handleSave}>Save</Button> 
+        <Button className='cancel-comment-button' variant='info' onClick={handleCancel}>Cancel</Button> 
       </div>  
       )  
     } else {
-      return <Button className='edit-button' variant='success' onClick={handleEdit}>Edit</Button>   
+      return <Button className='edit-button' variant='info' onClick={handleEdit}>Edit</Button>   
     }  
   }
 

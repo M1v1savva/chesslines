@@ -20,5 +20,7 @@
   margin-top: 10px;
   width: 70px !important;
   height: 40px !important;
-  background-color: #3b566e !important;
+  color: black !important;
+  background-color: rgb(83, 222, 217) !important;
+  border-color: rgb(83, 222, 217) !important;
 }
