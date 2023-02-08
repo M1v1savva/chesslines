@@ -77,7 +77,7 @@ export default function BoardWrapper({ boardWidth, game, setGame, movesDatabase,
   }
 
   return (
-    <div>
+    <div className='chess-cont'>
       <Chessboard
         className='chess-container'
         animationDuration={200}
@@ -111,9 +111,7 @@ export default function BoardWrapper({ boardWidth, game, setGame, movesDatabase,
           movesDatabaseCopy.update(gameCopy.get_history())
           setMovesDatabase(movesDatabaseCopy)
         }}
-      >
-        hard-left
-      </Button>
+      ><h2 className='button-text'>⇤</h2></Button>
       <Button
         className="board-button"
         variant='success'
@@ -126,9 +124,7 @@ export default function BoardWrapper({ boardWidth, game, setGame, movesDatabase,
           movesDatabaseCopy.update(gameCopy.get_history())
           setMovesDatabase(movesDatabaseCopy)
         }}
-      >
-        left
-      </Button>
+      ><h2 className='button-text'>←</h2></Button>
       <Button
         className="board-button"
         variant='success'
@@ -141,9 +137,7 @@ export default function BoardWrapper({ boardWidth, game, setGame, movesDatabase,
           movesDatabaseCopy.update(gameCopy.get_history())
           setMovesDatabase(movesDatabaseCopy)
         }}
-      >
-        right
-      </Button>
+      ><h2>→</h2></Button>
       <Button
         className="board-button"
         variant='success'
@@ -156,9 +150,7 @@ export default function BoardWrapper({ boardWidth, game, setGame, movesDatabase,
           movesDatabaseCopy.update(gameCopy.get_history())
           setMovesDatabase(movesDatabaseCopy)
         }}
-      >
-        hard-right
-      </Button>
+      ><h2>⇥</h2></Button>
 
       <Button
         className="board-button"

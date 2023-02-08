@@ -19,7 +19,7 @@ export default function BaseMoves({game, setGame, movesDatabase, setMovesDatabas
 
   return (
     <div>
-      <h3 className='base-title'>Moves database</h3>
+      <h3 className='base-title'>Possible continuations</h3>
       <div className='base-moves'>
         {movesDatabase.get_moves().map(item => (
           getButton(item)

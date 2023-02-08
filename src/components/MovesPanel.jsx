@@ -88,7 +88,7 @@ export default function MovesPanel({game, setGame, movesDatabase, setMovesDataba
   }
 
   return (
-    <div>
+    <div className='moves-panel'>
       <div className='moves-history'>
         {mapToPairs(game.get_full_history()).map(item => (
           getElement(item))

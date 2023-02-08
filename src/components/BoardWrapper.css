@@ -1,4 +1,9 @@
 .board-button {
     margin-top: 5px;
     margin-right: 5px;
+    height: 55px;
+}
+
+.chess-cont {
+    margin-top: 50px;
 }

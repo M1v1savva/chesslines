@@ -9,6 +9,8 @@ import './../index.css'
 import './Learn.css'
 import { MovesDatabase } from '../classes/MovesDatabase';
 import { getCommentRequest, getMovesRequest } from '../classes/ServerRequests.js';
+import Dropdown from 'react-bootstrap/Dropdown';
+import DropdownButton from 'react-bootstrap/DropdownButton';
 
 function Learn({token}) {
     const [chessboardSize, setChessboardSize] = useState(10)
@@ -49,6 +51,20 @@ function Learn({token}) {
         <div className='main-body'>
             <div className='about-text'>
                 <div className='split-board'>
+                    <div className='left-side'>
+                        <DropdownButton className='play-as' id="dropdown-basic-button" title="Dropdown button">
+                            <Dropdown.Item href="#/action-1">As white</Dropdown.Item>
+                            <Dropdown.Item href="#/action-2">As black</Dropdown.Item>
+                        </DropdownButton>   
+
+                        <MovesPanel 
+                            game={gameWrapper}
+                            setGame={setGameWrapper}
+                            movesDatabase={movesDatabase}
+                            setMovesDatabase={setMovesDatabase}
+                        /> 
+                    </div>
+                    
                     <BoardWrapper className='chess-container' 
                         boardWidth={chessboardSize} 
                         game={gameWrapper}
@@ -56,13 +72,7 @@ function Learn({token}) {
                         movesDatabase={movesDatabase}
                         setMovesDatabase={setMovesDatabase}
                     />
-                    <MovesPanel 
-                        game={gameWrapper}
-                        setGame={setGameWrapper}
-                        movesDatabase={movesDatabase}
-                        setMovesDatabase={setMovesDatabase}
-                    />
-                    <div>
+                    <div className='right-side'>
                         <BaseMoves
                             game={gameWrapper}
                             setGame={setGameWrapper}
