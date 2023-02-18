@@ -1,13 +1,16 @@
-import { React, useState } from 'react';
+import { React, useState } from 'react'
 import './../index.css'
 import './styles/Home.css'
-import Carousel from 'react-bootstrap/Carousel';
+import Carousel from 'react-bootstrap/Carousel'
+import { useNavigate } from "react-router-dom"
 import Button from 'react-bootstrap/Button'
 import img1 from './img/1.png'
 import img2 from './img/2.png'
 import img3 from './img/3.png'
 
 function Home() {
+    const navigate = useNavigate()
+
     const [index, setIndex] = useState(0)
     const handleSelect = (selectedIndex, e) => {
         setIndex(selectedIndex)
@@ -23,6 +26,14 @@ function Home() {
 
     const handleNext2 = () => {
         setIndex(3)
+    }
+
+    const handleMyMoves = () => {
+        navigate('/learn')
+    }
+
+    const handleSignIn = () => {
+        navigate('/login')
     }
 
     return (
@@ -72,6 +83,10 @@ function Home() {
                             <li>That's it! Now you can try chesslines for youself. 
                                 Go to my moves but remember to sign in to save your progress.</li>
                         </ul>
+                    </div>
+                    <div className='but-panel'>
+                        <Button className='my-moves' variant='info' onClick={handleMyMoves}>My Moves</Button>
+                        <Button className='sign-in' variant='info' onClick={handleSignIn}>Sign in</Button>
                     </div>
                     </div>
                 </Carousel.Item>

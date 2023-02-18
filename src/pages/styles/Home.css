@@ -7,6 +7,9 @@
     margin-left: 240px;
     margin-top: 250px;
     width: 300px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 .img1 {
@@ -35,13 +38,29 @@
 }
 
 .start1 {
-    margin-left: 110px;
+    /* margin-left: 110px; */
 }
 
 .next {
-    margin-left: 120px;
+    /* margin-left: 120px; */
 }
 
 .next2 {
-    margin-left: 120px;
+    /* margin-left: 120px; */
+}
+
+.but-panel {
+    margin-left: 400px;
+    margin-top: 250px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.my-moves {
+
+}
+
+.sign-in {
+    margin-top: 50px;
 }
