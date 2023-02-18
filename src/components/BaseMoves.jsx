@@ -1,4 +1,4 @@
-import './BaseMoves.css'
+import './styles/BaseMoves.css'
 import Button from 'react-bootstrap/Button';
 
 export default function BaseMoves({game, setGame, movesDatabase, setMovesDatabase}) {

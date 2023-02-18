@@ -5,7 +5,7 @@ import Alert from 'react-bootstrap/Alert';
 import { useNavigate } from 'react-router-dom';
 import { sendLoginRequest } from './../classes/AccountServerRequests.js'
 import './../index.css'
-import './Login.css'
+import './styles/Login.css'
 
 function Login({ setToken }) {
     const [loginForm, setLoginForm] = useState({

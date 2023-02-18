@@ -3,3 +3,7 @@
   max-width: 100% !important;
   width: 100% !important;
 }
+
+.img-bar {
+  max-height: 40px !important;
+}

@@ -1,0 +1,47 @@
+.home-text {
+    margin-top: 100px;
+    padding: 3% 3%;
+}
+
+.text-panel {
+    margin-left: 240px;
+    margin-top: 250px;
+    width: 300px;
+}
+
+.img1 {
+    margin-top: 50px;
+    margin-left: 80px;
+    height: 550px !important;
+}
+
+.img2 {
+    margin-top: 50px;
+    margin-left: 80px;
+    height: 550px !important;
+}
+
+.img3 {
+    margin-top: 50px;
+    margin-left: 80px;
+    height: 550px !important;
+}
+
+.hor {
+    display: flex;
+    flex-direction: row;
+    height: 600px;
+    margin-bottom: 50px;
+}
+
+.start1 {
+    margin-left: 110px;
+}
+
+.next {
+    margin-left: 120px;
+}
+
+.next2 {
+    margin-left: 120px;
+}

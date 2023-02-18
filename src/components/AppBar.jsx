@@ -2,19 +2,20 @@ import Container from 'react-bootstrap/Container'
 import Nav from 'react-bootstrap/Nav'
 import Navbar from 'react-bootstrap/Navbar'
 import { BrowserRouter, Route, Link } from "react-router-dom"
-import './AppBar.css'
+import './styles/AppBar.css'
+import icon from './blue-icon.png'
 
 function AppBar({token}) {
   return (
     <Navbar collapseOnSelect expand="lg" bg="dark" variant="dark">
       <Container className='nav-container'>
-        <Navbar.Brand as={Link} to="/">Chesslines</Navbar.Brand>
+        <Navbar.Brand as={Link} to="/"><img src={icon} className='img-bar'/> Chesslines</Navbar.Brand>
         <Navbar.Toggle aria-controls="responsive-navbar-nav" />
         <Navbar.Collapse id="responsive-navbar-nav">
           <Nav className="me-auto">
             <Nav.Link as={Link} to='/'>Home</Nav.Link>
           
-            <Nav.Link as={Link} to='learn'>Learn</Nav.Link>
+            <Nav.Link as={Link} to='learn'>My Moves</Nav.Link>
             
             <Nav.Link as={Link} to="contact">Contact</Nav.Link>
           </Nav>

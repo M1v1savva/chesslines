@@ -1,6 +1,6 @@
 import React, { useState } from "react"
 import Button from 'react-bootstrap/Button'
-import './MoveButtons.css'
+import './styles/MoveButtons.css'
 
 export default function MoveButtons({game, setGame, movesDatabase, setMovesDatabase}) {
 

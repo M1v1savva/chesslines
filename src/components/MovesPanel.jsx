@@ -1,4 +1,4 @@
-import './MovesPanel.css'
+import './styles/MovesPanel.css'
 import Button from 'react-bootstrap/Button';
 
 export default function MovesPanel({game, setGame, movesDatabase, setMovesDatabase}) {

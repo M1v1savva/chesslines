@@ -1,7 +1,7 @@
 import { useRef, useState } from 'react'
 import { Button } from 'react-bootstrap'
 import { Chessboard } from 'react-chessboard'
-import './BoardWrapper.css'
+import './styles/BoardWrapper.css'
 
 export default function BoardWrapper({ boardOrientation, boardWidth, game, setGame, movesDatabase, setMovesDatabase}) {
   const chessboardRef = useRef()

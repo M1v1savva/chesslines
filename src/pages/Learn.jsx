@@ -6,7 +6,7 @@ import MovesPanel from "./../components/MovesPanel"
 import BaseMoves from './../components/BaseMoves'
 import Comment from './../components/Comment'
 import './../index.css'
-import './Learn.css'
+import './styles/Learn.css'
 import { MovesDatabase } from '../classes/MovesDatabase';
 import { getCommentRequest, getMovesRequest } from '../classes/ServerRequests.js';
 import Dropdown from 'react-bootstrap/Dropdown';

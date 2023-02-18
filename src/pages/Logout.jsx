@@ -3,7 +3,7 @@ import Button from 'react-bootstrap/Button';
 import { useNavigate } from 'react-router-dom';
 import { sendLogoutRequest } from './../classes/AccountServerRequests.js'
 import './../index.css'
-import './Logout.css'
+import './styles/Logout.css'
 
 function Logout({removeToken}) {
 

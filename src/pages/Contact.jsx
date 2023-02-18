@@ -1,6 +1,6 @@
 import React from 'react';
 import './../index.css'
-import './Panel.css'
+import './styles/Panel.css'
 
 function Contact() {
     return (

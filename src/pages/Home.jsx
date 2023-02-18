@@ -1,22 +1,81 @@
-import React from 'react';
+import { React, useState } from 'react';
 import './../index.css'
-import './Home.css'
+import './styles/Home.css'
+import Carousel from 'react-bootstrap/Carousel';
+import Button from 'react-bootstrap/Button'
+import img1 from './img/1.png'
+import img2 from './img/2.png'
+import img3 from './img/3.png'
 
 function Home() {
+    const [index, setIndex] = useState(0)
+    const handleSelect = (selectedIndex, e) => {
+        setIndex(selectedIndex)
+    }
+
+    const handleStart = () => {
+        setIndex(1)
+    }
+
+    const handleNext = () => {
+        setIndex(2)
+    }
+
+    const handleNext2 = () => {
+        setIndex(3)
+    }
+
     return (
         <div className='main-body'>
             <div className='about-text'>
-                <div className='home-text'>
-                <h1>What is chesslines.com? </h1>
-                <p>This is a tool to store your chess opening preparation.</p>
-                <br/><h1>Why? </h1>
-                <p>Beginner-friendly interface - start using in under a minute. </p>
-                <br/><h1>How to use? </h1>
-                <p>For each position chesslines stores your comments and possible moves. </p>
-                <p>You can edit comments directly for each position. </p>
-                <p>To save the moves - use the save button under the moves panel.</p>
-                <p>You will save all the moves leading to position on the board.</p>
-                </div>
+            <Carousel activeIndex={index} onSelect={handleSelect}>
+                <Carousel.Item>
+                    <div className='hor'>
+                    <div className='text-panel'>
+                        <h3>Welcome to Chesslines</h3>
+                        <p>Store all your opening lines in one place</p>    
+                        <Button className='start1' variant='info' onClick={handleStart}>Start</Button>
+                    </div>
+                    <img src={img1} className='img1'/>
+                    </div>
+                </Carousel.Item>
+                <Carousel.Item>
+                    <div className='hor'>
+                    <div className='text-panel'>
+                        <ul>
+                            <li>For each position you will see a list of suggested moves
+                            and a note. The note can be edited. </li>
+                        </ul>
+                        <Button className='next' variant='info' onClick={handleNext}>Next</Button>
+                    </div>
+                    <img src={img2} className='img2'/>
+                    </div>
+                </Carousel.Item>
+                <Carousel.Item>
+                    <div className='hor'>
+                    <div className='text-panel'>
+                        <ul>
+                            <li>To add moves - play out the line, roll back 
+                                and forth with moves panel arrows and press save. 
+                                The move sequence all the way to the current position 
+                                on the board will be saved to "suggested moves". </li>
+                        </ul>
+                        <Button className='next2' variant='info' onClick={handleNext2}>Next</Button>
+                    </div>
+                    <img src={img3} className='img3'/>
+                    </div>
+                </Carousel.Item>
+                <Carousel.Item>
+                    <div className='hor'>
+                    <div className='text-panel'>
+                        <ul>
+                            <li>That's it! Now you can try chesslines for youself. 
+                                Go to my moves but remember to sign in to save your progress.</li>
+                        </ul>
+                    </div>
+                    </div>
+                </Carousel.Item>
+                </Carousel>
             </div>
         </div>
     );
