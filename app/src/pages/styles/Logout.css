@@ -1,0 +1,12 @@
+.logout-form {
+    margin: auto;
+    margin-top: 200px;
+    width: 500px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.logout-button {
+    width: 100px !important;
+}

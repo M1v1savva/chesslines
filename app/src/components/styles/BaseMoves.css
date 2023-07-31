@@ -1,0 +1,26 @@
+.base-moves {
+  display:flex;
+  flex-wrap: wrap;
+  margin-top: 12px;
+  margin-left: 50px;
+  height: 150px;
+  width: 600px;
+  background-color: #233240;
+  overflow-y: scroll
+}
+
+.base-title {
+  margin-left: 60px;
+}
+
+.move-button {
+  text-align: left !important;
+  margin-left: 15px;
+  margin-right: 0px;
+  margin-top: 10px;
+  width: 70px !important;
+  height: 40px !important;
+  color: black !important;
+  background-color: rgb(83, 222, 217) !important;
+  border-color: rgb(83, 222, 217) !important;
+}

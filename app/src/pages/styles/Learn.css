@@ -1,0 +1,41 @@
+.split-board {
+  display:flex;
+  flex-direction: row;
+}
+
+.chess-container {
+  max-width: 100% !important;
+  width: 100% !important;
+}
+
+.save-button {
+  margin-left: 220px;
+  margin-top: 20px;
+}
+
+.play-as {
+  margin-bottom: 30px;
+}
+
+.left-side {
+  margin-left: 50px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 50px;
+  margin-right: 50px;
+}
+
+.right-side {
+  margin-top: 50px;
+}
+
+.middle-side {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.alert-panel {
+  margin-top: 20px;
+}

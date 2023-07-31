@@ -1,0 +1,31 @@
+.loader-text {
+  margin: auto;
+  margin-top: 0px;
+  color: white;
+}
+
+.bar-loader {
+  margin: auto;
+  margin-top: 300px;
+  margin-bottom: 20px;
+  /* background-color: white !important; */
+}
+
+.bar-body {
+  background-color: #1B2631;
+  max-height: 100% !important;
+  height: 100% !important;
+  max-width: 100% !important;
+  width: 100% !important;
+  position: fixed;
+  display: flex;
+  flex-direction: column;
+}
+
+.c1 {
+  color: white;
+}
+
+.c2 {
+  color: white;
+}
