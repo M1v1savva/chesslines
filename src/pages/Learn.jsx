@@ -70,7 +70,6 @@ function Learn({token}) {
     
     return (
         <div className='main-body'>
-            <div className='about-text'>
                 <div className='split-board'>
                     <div className='left-side'>
                         <DropdownButton menuVariant='dark' variant='info' className='play-as' id="dropdown-basic-button" title={dropDownValue}>
@@ -122,7 +121,6 @@ function Learn({token}) {
                         />
                     </div>
                 </div> 
-            </div>
         </div>
     )
 }

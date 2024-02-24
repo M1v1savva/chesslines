@@ -9,7 +9,7 @@ import './styles/Login.css'
 
 function Login({ setToken }) {
     const [loginForm, setLoginForm] = useState({
-        email: '',
+        username: '',
         password: '',
         alert: false,
         alert_message: ''
@@ -25,10 +25,10 @@ function Login({ setToken }) {
             setLoginForm(loginCopy)
         } else if (res.status == 200) {
             setToken(res.token)
-            setLoginForm({email: '', password: '', alert: false, alert_message: ''})
+            setLoginForm({username: '', password: '', alert: false, alert_message: ''})
             navigate('/learn')
         } else {
-            setLoginForm({email: '', password: '', alert: true, alert_message: 'Unexpected website error.'})
+            setLoginForm({username: '', password: '', alert: true, alert_message: 'Unexpected website error.'})
         }
         event.preventDefault()
     }
@@ -44,12 +44,11 @@ function Login({ setToken }) {
         <div className='main-body'>
             <div className='about-text'>
             <div className='login-form'>
-            <Form>
-            <Form.Group className="mb-3" controlId="formBasicEmail">
+            <Form className='frm'>
+            <Form.Group className="mb-3" controlId="formBasicusername">
                 <Form.Label>Username</Form.Label>
-                <Form.Control onChange={handleChange} name='email' value={loginForm.email} type="text" placeholder="Enter username" />
+                <Form.Control onChange={handleChange} name='username' value={loginForm.username} type="text" placeholder="Username" />
             </Form.Group>
-
             <Form.Group className="mb-3" controlId="formBasicPassword">
                 <Form.Label>Password</Form.Label>
                 <Form.Control onChange={handleChange} name='password' value={loginForm.password} type="password" placeholder="Password" />

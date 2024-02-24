@@ -11,7 +11,7 @@ import './styles/Signup.css'
 
 function Signup({setToken}) {
     const [signupForm, setSignupForm] = useState({
-        email: '',
+        username: '',
         password1: '',
         password2: '',
         alert: false,
@@ -37,10 +37,10 @@ function Signup({setToken}) {
             setSignupForm(signupCopy)
         } else if (res.status == 200) {
             setToken(res.token)
-            setSignupForm({email: '', password1: '', password2: '', alert: false, alert_message: ''})
+            setSignupForm({username: '', password1: '', password2: '', alert: false, alert_message: ''})
             navigate('/learn')
         } else {
-            setSignupForm({email: '', password1: '', password2: '', alert: true, alert_message: 'Unexpected website error.'})
+            setSignupForm({username: '', password1: '', password2: '', alert: true, alert_message: 'Unexpected website error.'})
         }
         event.preventDefault()
     }
@@ -59,11 +59,7 @@ function Signup({setToken}) {
             <Form className='frm'>
             <Form.Group className="mb-3">
                 <Form.Label>Username</Form.Label>
-                <Form.Control onChange={handleChange} name='email' value={signupForm.email} type="text" placeholder="Username" />
-            </Form.Group>
-            <Form.Group className="mb-3" controlId="formBasicEmail">
-                <Form.Label>Email</Form.Label>
-                <Form.Control onChange={handleChange} name='email' value={signupForm.email} type="text" placeholder="Email" />
+                <Form.Control onChange={handleChange} name='username' value={signupForm.username} type="text" placeholder="Username" />
             </Form.Group>
             <Form.Group className="mb-3">
                 <Form.Label>Password</Form.Label>

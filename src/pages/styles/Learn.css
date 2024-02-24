@@ -1,6 +1,10 @@
 .split-board {
   display:flex;
+  width: 100% !important;
+  margin-top: 3%; 
   flex-direction: row;
+  justify-content: center;
+  align-items: center;
 }
 
 .chess-container {
@@ -18,21 +22,24 @@
 }
 
 .left-side {
-  margin-left: 50px;
   display: flex;
   flex-direction: column;
   align-items: center;
-  margin-top: 50px;
+  justify-content: center;
   margin-right: 50px;
 }
 
 .right-side {
-  margin-top: 50px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 
 .middle-side {
   display: flex;
   flex-direction: column;
+  justify-content: center;
   align-items: center;
 }
 
