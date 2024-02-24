@@ -21,14 +21,14 @@ function Login({ setToken }) {
         if (res.status == 401) {
             const loginCopy = {...loginForm}
             loginCopy.alert = true
-            loginCopy.alert_message = 'Wrong email or password.'
+            loginCopy.alert_message = 'Wrong username or password.'
             setLoginForm(loginCopy)
         } else if (res.status == 200) {
             setToken(res.token)
             setLoginForm({email: '', password: '', alert: false, alert_message: ''})
             navigate('/learn')
         } else {
-            setLoginForm({email: '', password: '', alert: true, alert_message: 'Unexpected website error. You can report it via my socials. '})
+            setLoginForm({email: '', password: '', alert: true, alert_message: 'Unexpected website error.'})
         }
         event.preventDefault()
     }
@@ -48,9 +48,6 @@ function Login({ setToken }) {
             <Form.Group className="mb-3" controlId="formBasicEmail">
                 <Form.Label>Username</Form.Label>
                 <Form.Control onChange={handleChange} name='email' value={loginForm.email} type="text" placeholder="Enter username" />
-                {/* <Form.Text className="text-muted">
-                We'll never share your email with anyone else.
-                </Form.Text> */}
             </Form.Group>
 
             <Form.Group className="mb-3" controlId="formBasicPassword">
@@ -60,7 +57,7 @@ function Login({ setToken }) {
             { loginForm.alert == true ? 
             <Alert className='alert' variant='danger'>{loginForm.alert_message}</Alert> : <div/>}
             </Form>
-            <Button className='signin-button' variant="success" type="submit" onClick={handleSignIn}>
+            <Button className='signin-button' variant="info" type="submit" onClick={handleSignIn}>
                 Sign in
             </Button>
             </div>

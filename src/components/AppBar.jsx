@@ -15,7 +15,7 @@ function AppBar({token}) {
           <Nav className="me-auto">
             <Nav.Link as={Link} to='/'>Home</Nav.Link>
           
-            <Nav.Link as={Link} to='learn'>My Moves</Nav.Link>
+            <Nav.Link as={Link} to='learn'>My Lines</Nav.Link>
             
             <Nav.Link as={Link} to="contact">Contact</Nav.Link>
           </Nav>

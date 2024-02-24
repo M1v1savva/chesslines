@@ -32,19 +32,24 @@ function Home() {
         navigate('/learn')
     }
 
+    
+    const handleSignUp = () => {
+        navigate('/signup')
+    }
+
     const handleSignIn = () => {
         navigate('/login')
     }
 
     return (
         <div className='main-body'>
-            <div className='about-text'>
+            <div className='caro'>
             <Carousel activeIndex={index} onSelect={handleSelect}>
                 <Carousel.Item>
                     <div className='hor'>
                     <div className='text-panel'>
                         <h3>Welcome to Chesslines</h3>
-                        <p>Store all your opening lines in one place</p>    
+                        <p>A tool for memorizing chess opening lines</p>    
                         <Button className='start1' variant='info' onClick={handleStart}>Start</Button>
                     </div>
                     <img src={img1} className='img1'/>
@@ -54,24 +59,11 @@ function Home() {
                     <div className='hor'>
                     <div className='text-panel'>
                         <ul>
-                            <li>For each position you will see a list of suggested moves
-                            and a note. The note can be edited. </li>
+                            <li>To add a new line - play it out and save.<br/>Optionally roll back and forth with arrows.<br/>
+                                When you save - you add a sequence of moves leading to the current posititon on the board.
+                        </li>
                         </ul>
                         <Button className='next' variant='info' onClick={handleNext}>Next</Button>
-                    </div>
-                    <img src={img2} className='img2'/>
-                    </div>
-                </Carousel.Item>
-                <Carousel.Item>
-                    <div className='hor'>
-                    <div className='text-panel'>
-                        <ul>
-                            <li>To add moves - play out the line, roll back 
-                                and forth with moves panel arrows and press save. 
-                                The move sequence all the way to the current position 
-                                on the board will be saved to "suggested moves". </li>
-                        </ul>
-                        <Button className='next2' variant='info' onClick={handleNext2}>Next</Button>
                     </div>
                     <img src={img3} className='img3'/>
                     </div>
@@ -80,14 +72,19 @@ function Home() {
                     <div className='hor'>
                     <div className='text-panel'>
                         <ul>
-                            <li>That's it! Now you can try chesslines for youself. 
-                                Go to my moves but remember to sign in to save your progress.</li>
+                            <li>For each position you can save a list of suggested moves
+                            and a note. This note can be edited. </li>
                         </ul>
+                        <Button className='next2' variant='info' onClick={handleNext2}>Next</Button>
                     </div>
-                    <div className='but-panel'>
-                        <Button className='my-moves' variant='info' onClick={handleMyMoves}>My Moves</Button>
+                    <img src={img2} className='img2'/>
+                    </div>
+                </Carousel.Item>
+                <Carousel.Item>
+                    <div className='last-panel'>
+                        <p>That's it! Now you can try chesslines for youself.</p>
+                        <Button className='sign-up' variant='info' onClick={handleSignUp}>Sign up</Button>
                         <Button className='sign-in' variant='info' onClick={handleSignIn}>Sign in</Button>
-                    </div>
                     </div>
                 </Carousel.Item>
                 </Carousel>

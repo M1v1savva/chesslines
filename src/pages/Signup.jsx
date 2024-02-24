@@ -2,9 +2,11 @@ import { React, useState, useEffect} from 'react'
 import Button from 'react-bootstrap/Button';
 import Form from 'react-bootstrap/Form';
 import Alert from 'react-bootstrap/Alert';
+import Col from 'react-bootstrap/Col';
 import { useNavigate } from 'react-router-dom';
 import { sendSignupRequest } from './../classes/AccountServerRequests.js'
 import './../index.css'
+import './styles/Login.css'
 import './styles/Signup.css'
 
 function Signup({setToken}) {
@@ -54,15 +56,15 @@ function Signup({setToken}) {
     <div className='main-body'>
             <div className='about-text'>
             <div className='login-form'>
-            <Form>
-            <Form.Group className="mb-3" controlId="formBasicEmail">
+            <Form className='frm'>
+            <Form.Group className="mb-3">
                 <Form.Label>Username</Form.Label>
-                <Form.Control onChange={handleChange} name='email' value={signupForm.email} type="text" placeholder="Enter username" />
-                {/* <Form.Text className="text-muted">
-                We'll never share your email with anyone else.
-                </Form.Text> */}
+                <Form.Control onChange={handleChange} name='email' value={signupForm.email} type="text" placeholder="Username" />
             </Form.Group>
-
+            <Form.Group className="mb-3" controlId="formBasicEmail">
+                <Form.Label>Email</Form.Label>
+                <Form.Control onChange={handleChange} name='email' value={signupForm.email} type="text" placeholder="Email" />
+            </Form.Group>
             <Form.Group className="mb-3">
                 <Form.Label>Password</Form.Label>
                 <Form.Control onChange={handleChange} name='password1' value={signupForm.password1} type="password" placeholder="Password" />
@@ -74,7 +76,7 @@ function Signup({setToken}) {
             { signupForm.alert == true ? 
             <Alert className='alert' variant='danger'>{signupForm.alert_message}</Alert> : <div/>}
             </Form>
-            <Button className='signin-button' variant="success" type="submit" onClick={handleSignUp}>
+            <Button className='signin-button' variant="info" type="submit" onClick={handleSignUp}>
                 Sign up
             </Button>
             </div>

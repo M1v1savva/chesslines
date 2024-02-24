@@ -19,7 +19,7 @@ function Learn({token}) {
     const [gameWrapper, setGameWrapper] = useState(new GameWrapper())
     const [movesDatabase, setMovesDatabase] = useState(new MovesDatabase())
     const [currentOrientation, setBoardOrientation] = useState('white') // add class helper
-    const [dropDownValue, setDropDownValue] = useState('As white')
+    const [dropDownValue, setDropDownValue] = useState('Play as white')
 
     useEffect(() => {
         function handleResize() {
@@ -60,11 +60,11 @@ function Learn({token}) {
     }, [])
 
     const handleSelect1 = (event) => {
-        setDropDownValue('As white')
+        setDropDownValue('Play as white')
         setBoardOrientation('white')
     }
     const handleSelect2 = (event) => {
-        setDropDownValue('As black')
+        setDropDownValue('Play as black')
         setBoardOrientation('black')
     }
     
@@ -74,8 +74,8 @@ function Learn({token}) {
                 <div className='split-board'>
                     <div className='left-side'>
                         <DropdownButton menuVariant='dark' variant='info' className='play-as' id="dropdown-basic-button" title={dropDownValue}>
-                            <Dropdown.Item value='As white' onClick={handleSelect1}>As white</Dropdown.Item>
-                            <Dropdown.Item value='As black' onClick={handleSelect2}>As black</Dropdown.Item>
+                            <Dropdown.Item value='As white' onClick={handleSelect1}>Play as white</Dropdown.Item>
+                            <Dropdown.Item value='As black' onClick={handleSelect2}>Play as black</Dropdown.Item>
                         </DropdownButton>   
 
                         <MovesPanel 
