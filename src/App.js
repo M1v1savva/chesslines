@@ -36,7 +36,7 @@ export default function App() {
       return (
         <div className="bar-body">
           <BeatLoader color='white' className='bar-loader'/>
-          <p className='loader-text'>Our servers are starting... This will take ~30 seconds. </p>
+          <p className='loader-text'>This website is run on a free hosting. The servers will take approximately 45 seconds to boot up. </p>
         </div>
       )
     } else {
